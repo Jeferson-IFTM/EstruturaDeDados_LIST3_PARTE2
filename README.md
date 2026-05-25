@@ -1,29 +1,15 @@
-# Atividade 1: Algoritmos em Listas Encadeadas Simples 🚀
-
-Este repositório contém a resolução da lista de exercícios de fixação da disciplina de **Estrutura de Dados I** do curso de **Tecnologia em Análise e Desenvolvimento de Sistemas (IFTM - Campus Patrocínio)**.
-
-O objetivo principal é a manipulação correta de ponteiros (`head`, `tail` e `next`), o controle de referências na memória Heap do Java e a otimização de algoritmos de busca e remoção em estruturas lineares dinâmicas.
-
----
-
-## 📁 Estrutura do Projeto
-
-O projeto foi totalmente modularizado, onde **cada questão está implementada em uma classe Java separada**, além de uma classe principal contendo um menu console interativo para testes em tempo real.
-
-```text
-src/EstruturaDeDados/JEFERSON/TEST/
+🔗 Estrutura De Dados - Desafios de Lista EncadeadaEste repositório contém a implementação de uma lista simplesmente encadeada personalizada (MyLinkedList) e a resolução de 5 problemas clássicos de estrutura de dados desenvolvidos para a disciplina de Estrutura de Dados.🚀 Sobre o ProjetoA aplicação utiliza uma lista ligada simples dinâmica com referências para a cabeça (head) e cauda (tail). O foco principal do projeto é o entendimento profundo sobre manipulação de ponteiros, algoritmos de varredura e otimização de espaço em memória ($O(1)$ auxiliar).Funcionalidades Principais:Inserção Adaptativa: Organização automática de valores em ordem crescente diretamente na inserção.Remoção sem Predecessor: Algoritmo cirúrgico para deletar um nó intermediário tendo acesso apenas à sua própria referência.Inversão In-Place: Reversão completa dos ponteiros da lista sem gastar memória extra.Intercalação Linear: Fusão de duas listas já ordenadas mantendo a ordenação final de forma eficiente.Algoritmo One-Pass: Remoção do N-ésimo nó a partir do fim utilizando a técnica de dois ponteiros em uma única varredura.🛠️ Tecnologias e ConceitosLinguagem: Java 8+Estrutura de Dados: Lista Simplesmente Encadeada (Nós Dinâmicos)Conceitos: Manipulação de Ponteiros, Complexidade Algorítmica, Algoritmos In-Place e Técnicas de Dois Ponteiros (Fast and Slow).📂 Estrutura do CódigoPlaintextsrc/EstruturaDeDados/JEFERSON/TEST/
 │
-├── MyLinkedList.java       # Estrutura base da lista ligada com encapsulamento (Getters/Setters)
-├── Questao1.java           # [Q1] Inserção ordenada em ordem crescente (Sorted Insertion)
-├── Questao2.java           # [Q2] Remoção de nó intermediário sem ponteiro predecessor
-├── Questao3.java           # [Q3] Inversão de lista encadeada in-place (sem memória extra)
-├── Questao4.java           # [Q4] Intercalação linear de duas listas ordenadas (Merge)
-├── Questao5.java           # [Q5] Remoção do N-ésimo nó a partir do final (Algoritmo One-Pass)
-└── Main.java               # Menu interativo via console para execução e testes das questões
-
-🛠️ Descrição Técnica das SoluçõesQuestão 1: Inserção Ordenada (Questao1.java)Problema: Corrigir uma implementação falha de inserção ordenada.Solução: Tratamento rigoroso de estados críticos da estrutura: lista vazia, inserção na cabeça (menor valor), inserção na cauda (maior valor) atualizando o ponteiro tail, e inserção posicional no meio caminhando sequencialmente enquanto current.next.element < element.Questão 2: Remoção sem Predecessor (Questao2.java)Problema: Remover um nó P tendo acesso estritamente a ele, sem possuir a referência do head ou do nó anterior.Solução: Implementação de remoção lógica por substituição de conteúdo. O valor do nó sucessor (P.next.element) é copiado para dentro de P, e o link de P pula o seu vizinho da direita (P.next = P.next.next), isolando o nó duplicado para coleta do Garbage Collector.Questão 3: Inversão In-Place (Questao3.java)Problema: Inverter a ordem de todos os elementos da lista sem instanciar novos nós ou alocar memória extra ($O(1)$ em espaço).Solução: Utilização de três ponteiros auxiliares de navegação de estados (previous, current e nextNode). A cada iteração do laço, a direção do ponteiro current.next é invertida para apontar para o previous. Ao final, as variáveis globais head e tail são reposicionadas.Questão 4: Intercalação de Listas (Questao4.java)Problema: Unir duas listas simplesmente encadeadas que já se encontram ordenadas em uma única lista também ordenada.Solução: Algoritmo de ponteiros paralelos com complexidade de tempo linear $O(n + m)$. Avança o ponteiro da lista cujo elemento atual for menor, adicionando-o na lista resultante. Elementos remanescentes de listas de tamanhos desiguais são anexados diretamente ao final.Questão 5: Remoção do N-ésimo Nó do Fim (Questao5.java)Problema: Remover o $n$-ésimo nó contando de trás para frente em apenas uma única passagem (one-pass), sem consultar a propriedade size ou contar os nós previamente.Solução: Técnica de dois ponteiros com distanciamento constante (Ponteiros Rápido e Lento). O ponteiro fast avança $n$ posições à frente na lista. Em seguida, os ponteiros fast e slow movem-se em sincronia na mesma velocidade. Quando fast alcança o último nó, slow estará posicionado exatamente no nó predecessor do alvo a ser removido.💻 Como Rodar o ProjetoCertifique-se de que possui o JDK 8 ou superior instalado na sua máquina.Clone este repositório ou baixe os arquivos fonte.Coloque todas as classes dentro da mesma estrutura de diretório correspondente ao pacote: EstruturaDeDados/JEFERSON/TEST/.Compile os arquivos de dentro da pasta raiz do código fonte:Bashjavac EstruturaDeDados/JEFERSON/TEST/*.java
-Execute a classe principal para abrir o menu:Bashjava EstruturaDeDados.JEFERSON.TEST.Main
-🕹️ Demonstração do Menu InterativoAo rodar a classe Main, você interagirá com o seguinte console dinâmico, exibindo as amarrações em tempo real:Plaintext========= MENU DE SELEÇÃO =========
+├── MyLinkedList.java      # Estrutura base da lista ligada com encapsulamento (Getters/Setters)
+├── Questao1.java          # [Q1] Inserção ordenada em ordem crescente (Sorted Insertion)
+├── Questao2.java          # [Q2] Remoção de nó intermediário sem ponteiro predecessor
+├── Questao3.java          # [Q3] Inversão de lista encadeada in-place (sem memória extra)
+├── Questao4.java          # [Q4] Intercalação linear de duas listas ordenadas (Merge)
+├── Questao5.java          # [Q5] Remoção do N-ésimo nó a partir do final (Algoritmo One-Pass)
+└── Main.java              # Menu interativo via console para execução e testes das questões
+📈 Análise de Complexidade das SoluçõesOperação / QuestãoTempoEspaçoJustificativaQ1: Inserção Ordenada$O(n)$$O(1)$Varredura linear para encontrar a posição correta do elemento.Q2: Remoção sem Predecessor$O(1)$$O(1)$Copia o valor do próximo nó e altera o ponteiro diretamente, sem buscar a lista.Q3: Inversão In-Place$O(n)$$O(1)$Passagem única mudando a direção das referências com 3 ponteiros auxiliares.Q4: Intercalação de Listas$O(n + m)$$O(1)$Ponteiros paralelos avançando juntos baseado no menor valor das duas listas.Q5: Remoção do N-ésimo do Fim$O(n)$$O(1)$Algoritmo One-Pass usando ponteiros rápido/lento com espaçamento fixo de $n$ posições.💻 Como Rodar o ProjetoCertifique-se de que possui o JDK 8 ou superior instalado.Abra o terminal na pasta raiz do código fonte (antes da pasta EstruturaDeDados) e compile os arquivos:Bashjavac EstruturaDeDados/JEFERSON/TEST/*.java
+Execute a classe principal para abrir o menu interativo:Bashjava EstruturaDeDados.JEFERSON.TEST.Main
+🕹️ Demonstração do Menu InterativoAo rodar a classe Main, o console exibirá o estado atualizado da lista e as opções disponíveis para teste:Plaintext========= MENU DE SELEÇÃO =========
 Estado da Lista: [10] -> [20] -> [30] -> [40] -> null
 
 1. Inserir no final (addLast)
